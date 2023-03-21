@@ -12,38 +12,38 @@ public class Main {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt(1000);
         }
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println(numbers[i]);
+        for (int number : numbers) {
+            System.out.println(number);
         }
         System.out.println("Выберите какое число вы хотите найти в массиве: \n наибольшее, наименьшее, среднее арифметическое");
         Scanner scanner = new Scanner(System.in);
         String action = scanner.nextLine();
         switch (action) {
-            case "наибольшее":
+            case "наибольшее" -> {
                 int max = 0;
-                for (int i = 0; i < numbers.length; i++) {
-                    if (numbers[i] > max)
-                        max = numbers[i];
+                for (int number : numbers) {
+                    if (number > max)
+                        max = number;
 
                 }
                 System.out.println("Наибольший элемент этого массива: " + max);
-                break;
-            case "наименьшее":
+            }
+            case "наименьшее" -> {
                 int min = 0;
-                for (int i = 0; i < numbers.length; i++) {
-                    if (numbers[i] > min)
-                        min = numbers[i];
+                for (int number : numbers) {
+                    if (number > min)
+                        min = number;
                 }
                 System.out.println("Наименьший элемент этого массива: " + min);
-                break;
-            case "среднее арифметическое":
-                    double sum = 0;
-                    for (int j = 0; j < numbers.length; j++) {
-                        sum += numbers[j];
-                    }
-                    double mid = sum / numbers.length;
-                System.out.printf("Среднее арифметическое данного массива будет: " + "%.2f",mid);
-                break;
+            }
+            case "среднее арифметическое" -> {
+                double sum = 0;
+                for (int number : numbers) {
+                    sum += number;
+                }
+                double mid = sum / numbers.length;
+                System.out.printf("Среднее арифметическое данного массива будет: " + "%.2f", mid);
+            }
         }
     }
 }
