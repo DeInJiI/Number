@@ -29,9 +29,9 @@ public class Main {
                 System.out.println("Наибольший элемент этого массива: " + max);
             }
             case "наименьшее" -> {
-                int min = 0;
+                int min = numbers [0];
                 for (int number : numbers) {
-                    if (number > min)
+                    if (number < min)
                         min = number;
                 }
                 System.out.println("Наименьший элемент этого массива: " + min);
